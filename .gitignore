@@ -1,0 +1,25 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Django files
+db.sqlite3
+media/
+staticfiles/
+
+# IDEs/System files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
