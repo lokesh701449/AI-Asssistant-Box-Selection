@@ -1,5 +1,7 @@
 # AI-Assisted Box Selection System
 
+[![Django Tests](https://github.com/lokesh701449/AI-Asssistant-Box-Selection/actions/workflows/django.yml/badge.svg)](https://github.com/lokesh701449/AI-Asssistant-Box-Selection/actions/workflows/django.yml)
+
 A production-quality Django REST Framework (DRF) project built for recommending the best/cheapest shipping boxes for orders. Designed as a Python Developer Internship assignment.
 
 ---
@@ -179,3 +181,22 @@ pytest
     }
   }
   ```
+
+---
+
+## Continuous Integration (GitHub Actions)
+
+This project has a preconfigured GitHub Actions CI workflow to automate tests and code checkouts on the repository.
+
+### How It Works:
+On every `push` or `pull_request` to the `main` branch, the workflow triggers and performs the following automated steps on a clean `ubuntu-latest` environment:
+1. **Checkout:** Pulls the repository code using `actions/checkout@v4`.
+2. **Setup Python 3.11:** Initializes a Python 3.11 runner using `actions/setup-python@v5` (caching pip dependencies for optimal build time).
+3. **Install Dependencies:** Installs packages specified in `requirements.txt`.
+4. **Database Migrations:** Creates/updates the SQLite schema by running `python manage.py migrate`.
+5. **Run Pytest Suite:** Runs all automated test cases checking dimensions rotation, weight thresholds, serializer validations, and REST CRUD actions.
+
+### How to View Workflow Runs:
+1. Navigate to the GitHub repository: [https://github.com/lokesh701449/AI-Asssistant-Box-Selection](https://github.com/lokesh701449/AI-Asssistant-Box-Selection).
+2. Click on the **Actions** tab at the top.
+3. Select the **Django Tests** workflow to inspect progress logs, check run success, or view detailed step trace logs.
